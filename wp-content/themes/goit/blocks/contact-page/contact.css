@@ -1,0 +1,15 @@
+.contact-social-icons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.contact-icon {
+  width: 140px;
+  color: #312e81;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #202220;
+  }
+}

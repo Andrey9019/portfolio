@@ -1,0 +1,15 @@
+// Font
+$font: "Poppins", sans-serif;
+
+// Collors
+$primary: #312e81;
+$gray: #6b7280;
+$light: #fbfbfb;
+$dark: #202220;
+$white: #ffffff;
+$black: #000000;
+$border-gray: #dcdfe5;
+$primary-light: lighten($primary, 20%); // Adjust the percentage as needed
+$secondary: #dcdfe5;
+$secondary-dark: darken($secondary, 20%); // Для фокуса чи ховера
+$secondary-light: lighten($secondary, 20%); // Для фокуса чи ховера

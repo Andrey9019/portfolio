@@ -1,0 +1,8 @@
+.hero-left {
+  flex: 0 0 auto;
+  width: 80%;
+}
+.hero-right {
+  flex: 0 0 auto;
+  width: 35%;
+}

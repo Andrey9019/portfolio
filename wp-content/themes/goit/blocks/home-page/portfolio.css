@@ -1,0 +1,108 @@
+.portfolio-block {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.portfolio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.portfolio-txt {
+  width: 60%;
+}
+
+.portfolio-btn {
+  margin-right: 20px;
+}
+
+.btn--secondary {
+  width: 40%;
+}
+
+.portfolio-cards {
+  display: flex;
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  flex-wrap: wrap;
+  margin-top: calc(var(--bs-gutter-y) * -1);
+  margin-right: calc(var(--bs-gutter-x) * -0.5);
+  margin-left: calc(var(--bs-gutter-x) * -0.5);
+}
+
+.portfolio-card {
+  background-color: rgb(245, 245, 245);
+  padding: 15px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.card {
+  /* position: relative;
+  overflow: hidden; */
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+.card-link {
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+}
+.card-img {
+  width: 100%;
+  transition: filter 0.3s ease;
+}
+
+.card h4 {
+  margin: 10px 0;
+  transition: transform 0.3s ease;
+  z-index: 2; /* Назва буде зверху */
+  position: relative;
+}
+
+.card p {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.6);
+  transition: bottom 0.3s ease;
+  z-index: 1; /* Опис буде під назвою */
+}
+
+.portfolio-card:hover .card p {
+  bottom: 10px;
+}
+
+.portfolio-card:hover .card h4 {
+  transform: translateY(-400%);
+}
+
+.portfolio-card:hover .card-img {
+  filter: blur(3px) brightness(0.1);
+}
+
+.portfolio-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+.portfolio-card:hover::before {
+  opacity: 1;
+}
+
+.portfolio-card:hover .card-img {
+  filter: blur(3px);
+}

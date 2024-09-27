@@ -1,0 +1,50 @@
+header {
+  background-color: #ffffff;
+  padding: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  max-height: 50px;
+}
+
+.header-menu {
+  display: flex;
+  gap: 30px;
+}
+
+.header-menu ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header-menu li {
+  position: relative;
+}
+
+.header-menu a {
+  text-decoration: none;
+  color: #1d1b5e;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.header-menu a:hover {
+  color: #4f46e5;
+}
+
+.header-menu .current-menu-item a {
+  font-weight: bold;
+  color: #4f46e5;
+}

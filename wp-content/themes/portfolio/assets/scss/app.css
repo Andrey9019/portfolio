@@ -1,0 +1,10 @@
+body {
+  background: #000;
+  color: #fff;
+}
+.co1-3 {
+  width: 32%;
+  float: left;
+  padding: 0 15px;
+  margin-bottom: 30px;
+}
