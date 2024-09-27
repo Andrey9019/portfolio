@@ -53,11 +53,11 @@ if ($projects_group) {
     $project_description_5 = $portfolio_card_5['project_description_5'] ?? 'Description Project...';
 
     // Доступ до полів для картки 6
-    $portfolio_card_6 = $projects_group['portfolio_card_6'];
-    $cta_project_link_6 = $portfolio_card_6['cta_project_link_6'] ?? array('url' => '#', 'target' => '_self');
-    $project_image_6 = $portfolio_card_6['project_image_6'] ?? null;
-    $project_name_6 = $portfolio_card_6['project_name_6'] ?? 'Name Project...';
-    $project_description_6 = $portfolio_card_6['project_description_6'] ?? 'Description Project...';
+    // $portfolio_card_6 = $projects_group['portfolio_card_6'];
+    // $cta_project_link_6 = $portfolio_card_6['cta_project_link_6'] ?? array('url' => '#', 'target' => '_self');
+    // $project_image_6 = $portfolio_card_6['project_image_6'] ?? null;
+    // $project_name_6 = $portfolio_card_6['project_name_6'] ?? 'Name Project...';
+    // $project_description_6 = $portfolio_card_6['project_description_6'] ?? 'Description Project...';
 }
 
 ?>
@@ -165,7 +165,7 @@ if ($projects_group) {
             </div>
 
             <!-- Portfolio Card 6 -->
-            <div class="col-md-4  ">
+            <!-- <div class="col-md-4  ">
                 <a href="<?php echo esc_url($cta_project_link_6['url']); ?>" target="<?php echo esc_attr($cta_project_link_6['target']); ?>" class="card-link">
                     <div class="portfolio-card">
                         <div class="card">
@@ -181,7 +181,7 @@ if ($projects_group) {
                         </div>
                     </div>
                 </a>
-            </div>
+            </div> -->
 
         </div>
     </div>
