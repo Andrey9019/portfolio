@@ -9,12 +9,11 @@ const jsWatch = ["./assets/js/app.js"],
   ],
   cssFiles = ["./assets/scss/app.scss"];
 
-// Initialize modules
-// Importing specific gulp API functions lets us write them below as series() instead of gulp.series()
+// Ініціалізація модулів
 const gulp = require("gulp");
 const { src, dest, watch, series, parallel } = gulp;
 
-// Importing all the Gulp-related packages we want to use
+// Імпорт всіх пакетів Gulp
 const sourcemaps = require("gulp-sourcemaps"),
   sass = require("gulp-sass")(require("sass")),
   babel = require("gulp-babel"),
@@ -24,7 +23,7 @@ const sourcemaps = require("gulp-sourcemaps"),
   concat = require("gulp-concat"),
   merge = require("merge2");
 
-// Sass task: compiles the style.scss file into style.css
+// Задача для SCSS
 function scssTask() {
   const cssBackFiles = src(cssFiles, { base: "./" })
     .pipe(
@@ -46,7 +45,7 @@ function scssTask() {
   return merge(cssBackFiles);
 }
 
-// JS Task: minify scripts
+// Задача для JS
 function jsTask() {
   const jsBackFiles = src(jsFiles, { base: "./" })
     .pipe(
@@ -68,13 +67,13 @@ function jsTask() {
   return merge(jsBackFiles);
 }
 
-// Watch task: watch SCSS and JS files for changes
-// If any change, run scss and js tasks simultaneously
+// Задача для спостереження
 function watchTask() {
   watch([...cssWatch, ...jsWatch], series(parallel(scssTask, jsTask)));
 }
 
-// Export the default Gulp task, so it can be run
-// Runs the scss and js tasks simultaneously
-// then runs cacheBust, then watch task
+// Експортуємо задачу build
+exports.build = series(parallel(scssTask, jsTask));
+
+// Експортуємо задачу за замовчуванням
 exports.default = series(parallel(scssTask, jsTask), watchTask);
