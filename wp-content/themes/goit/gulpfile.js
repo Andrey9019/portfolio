@@ -23,6 +23,9 @@ const sourcemaps = require("gulp-sourcemaps"),
   concat = require("gulp-concat"),
   merge = require("merge2");
 
+// Шляхи до вихідних і згенерованих файлів
+const distPath = "./dist"; // Додайте цю змінну для шляху до папки dist
+
 // Задача для SCSS
 function scssTask() {
   const cssBackFiles = src(cssFiles, { base: "./" })
@@ -40,7 +43,8 @@ function scssTask() {
     )
     .pipe(concat("app.min.css"))
     .pipe(sourcemaps.write("."))
-    .pipe(dest("./assets/scss/"));
+    .pipe(dest("./assets/scss/")) // Зберігає оригінальний файл
+    .pipe(dest(distPath)); // Зберігає в dist
 
   return merge(cssBackFiles);
 }
@@ -62,7 +66,8 @@ function jsTask() {
     )
     .pipe(minifyjs())
     .pipe(concat("app.min.js"))
-    .pipe(dest("./assets/js/"));
+    .pipe(dest("./assets/js/")) // Зберігає оригінальний файл
+    .pipe(dest(distPath)); // Зберігає в dist
 
   return merge(jsBackFiles);
 }
