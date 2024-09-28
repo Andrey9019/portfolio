@@ -1,0 +1,3 @@
+[build]
+command = "cd public/wp-content/themes/goit && gulp build"
+publish = "public/wp-content/themes/goit/dist"
